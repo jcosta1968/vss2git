@@ -167,8 +167,15 @@ namespace Hpdi.VssLogicalLib
                         return new VssRestoreAction(db.GetItemName(archive.Name, archive.Physical),
                             archive.ArchivePath);
                     }
+                case Hpdi.VssPhysicalLib.Action.ArchivedVersionsOfFile_Action20:
+                case Hpdi.VssPhysicalLib.Action.ArchivedVersionsOfProject_Action21:
+                    {
+                        var create = (CommonRevisionRecord)revision;
+                        return new VssCreateAction(db.GetItemName(create.Name, create.Physical));
+                    }
                 default:
                     throw new ArgumentException("Unknown revision action: " + revision.Action);
+                    break;
             }
         }
     }

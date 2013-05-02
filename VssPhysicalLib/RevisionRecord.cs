@@ -47,6 +47,10 @@ namespace Hpdi.VssPhysicalLib
         EditFile = 17,
         CreateBranch = 19,
 
+        //jc
+        ArchivedVersionsOfFile_Action20 = 20,
+        ArchivedVersionsOfProject_Action21 = 21,
+
         // archive actions
         ArchiveProject = 23,
         RestoreProject = 25
